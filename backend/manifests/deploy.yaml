@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ocm-test-app
+  namespace: default
+  labels:
+    app: ocm-test-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ocm-test-app
+  template:
+    metadata:
+      labels:
+        app: ocm-test-app
+    spec:
+      containers:
+      - image: noimage:v0.0.0 # we'll use localization later to correctly specify the image
+        name: ocm-test-app
+        env: 
+           - name: MYSQL_ROOT_PASSWORD
+             value: mesutOzil31@%
+        ports:
+        - containerPort: 3306
+          name: http
