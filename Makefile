@@ -40,7 +40,7 @@ keys:
 	$(OCM) create rsakeypair key.priv key.pub
 
 sign:
-	$(OCM) sign component -s skarlso -K key.priv --repo $(OCI_REPO) $(COMPONENT)
+	$(OCM) sign component -s sidhishruti22 -K key.priv --repo $(OCI_REPO) $(COMPONENT)
 
 ca: gen
 	$(OCM) create ca -f $(COMPONENT) $(VERSION) --provider $(PROVIDER) -F gen/ca --scheme ocm.software/v3alpha1
